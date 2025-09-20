@@ -1,0 +1,429 @@
+/* 기본 리셋 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 0.8rem;
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+p {
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3eeff 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    color: #333;
+    font-size: 0.8rem;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.6rem;
+    margin-bottom: 10px;
+}
+
+.author-contact a {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-decoration-line: none !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 헤더 스타일 */
+header {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 50, 150, 0.1);
+    margin-bottom: 40px;
+    overflow: hidden;
+    min-height: 300px;
+    /* 대체 배경 */
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+/* 비디오 배경 스타일 */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    object-fit: cover;
+}
+
+.plyr__controls {
+    border-radius: 20px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Plyr 커스텀 스타일 */
+.plyr--audio .plyr__controls {
+    padding: 10px;
+}
+
+/* 프로그레스바 스타일 */
+.plyr--audio .plyr__progress {
+    margin: 0 10px;
+}
+
+.plyr__progress input[type="range"] {
+    position: relative;
+    z-index: 2;
+}
+
+/* 볼륨 컨트롤 최적화 */
+.plyr__volume {
+    max-width: 90px;
+    min-width: 60px;
+}
+
+.plyr__volume input[type="range"] {
+    width: 100%;
+}
+
+/* 모바일 미디어 플레이어 스타일 */
+@media (max-width: 768px) {
+    /* 모바일에서 프로그레스바 가시성 향상 */
+    .plyr--audio .plyr__progress {
+        display: block !important;
+        position: relative;
+        margin: 8px 0;
+        width: 100%;
+    }
+    
+    .plyr--audio .plyr__progress__container {
+        width: 100%;
+        height: 8px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+    
+    .plyr__progress input[type="range"] {
+        width: 100%;
+        height: 8px;
+        padding: 0;
+    }
+    
+    /* 컨트롤 버튼 크기 조정 */
+    .plyr__controls button {
+        padding: 8px;
+    }
+    
+    /* 볼륨 슬라이더 길이 조정 */
+    .plyr__volume {
+        max-width: 70px;
+        min-width: 50px;
+    }
+    
+    /* 시간 표시 크기 */
+    .plyr__time {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 더 작은 화면에서 컨트롤 최적화 */
+    .plyr--audio .plyr__controls {
+        padding: 8px;
+    }
+    
+    /* 프로그레스바 높이 증가 */
+    .plyr--audio .plyr__progress__container {
+        height: 10px;
+    }
+    
+    .plyr__progress input[type="range"] {
+        height: 10px;
+    }
+    
+    /* 볼륨 컨트롤 더 짧게 */
+    .plyr__volume {
+        max-width: 60px;
+        min-width: 40px;
+    }
+    
+    /* 버튼 간격 조정 */
+    .plyr__controls > .plyr__control {
+        margin-right: 4px;
+    }
+}
+
+
+
+/* 반투명 어두운 레이어 */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+}
+
+/* 헤더 콘텐츠 */
+.header-content {
+    position: relative;
+    z-index: 3;
+    padding: 60px 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(1.1);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 메인 콘텐츠 */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* 음악 카드 스타일 */
+.music-card {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 50, 150, 0.08);
+    margin-bottom: 20px;
+}
+
+.music-card h2 {
+    color: #1e3a8a;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    padding-right: 40px; /* 다운로드 버튼 공간 확보 */
+}
+
+.music-card .description {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.music-card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 다운로드 버튼 스타일 */
+.download-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4274c4 0%, #2c4179 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #385799 0%, #27386e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.download-btn i {
+    font-size: 0.9rem;
+}
+
+/* 오디오 플레이어 스타일 */
+audio {
+    width: 100%;
+    margin-top: 10px;
+    outline: none;
+}
+
+/* 푸터 스타일 */
+footer {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 50, 150, 0.08);
+    text-align: left;
+}
+
+.author {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.author p {
+    font-size: 0.5rem;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.license h3 {
+    color: #1e3a8a;
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.license-text {
+    font-size: 0.5rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.opensource-info {
+    font-size: 0.65rem;
+    color: #3b82f6;
+    font-weight: 500;
+    padding: 15px;
+    background: #eff6ff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header {
+        min-height: 250px;
+    }
+    
+    .header-content {
+        padding: 40px 20px;
+    }
+    
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    main {
+        gap: 20px;
+    }
+    
+    .music-category {
+        padding: 20px;
+    }
+    
+    .category-title {
+        font-size: 0.9rem;
+    }
+    
+    footer {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        min-height: 200px;
+    }
+    
+    .header-content {
+        padding: 30px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        width: 60px;
+    }
+    
+    .music-category {
+        padding: 15px;
+    }
+    
+    .music-item {
+        padding: 12px;
+    }
+    
+    .music-info h3 {
+        font-size: 0.8rem;
+    }
+    
+    .music-info .description {
+        font-size: 0.65rem;
+    }
+}
+
+/* 로딩 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.music-category {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.music-category:nth-child(1) { animation-delay: 0.1s; }
+.music-category:nth-child(2) { animation-delay: 0.2s; }
+.music-category:nth-child(3) { animation-delay: 0.3s; }
+.music-category:nth-child(4) { animation-delay: 0.4s; }
